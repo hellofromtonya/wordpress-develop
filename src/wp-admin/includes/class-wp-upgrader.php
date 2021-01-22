@@ -452,6 +452,8 @@ class WP_Upgrader {
 	public function install_package( $args = array() ) {
 		global $wp_filesystem, $wp_theme_directories;
 
+		$start_time = time();
+
 		$defaults = array(
 			'source'                      => '', // Please always pass this.
 			'destination'                 => '', // ...and this.
@@ -594,6 +596,7 @@ class WP_Upgrader {
 		// Copy new version of item into place.
 		$result = copy_dir( $source, $remote_destination );
 		if ( is_wp_error( $result ) ) {
+			$this->send_error_data( $result, $start_time, 'install_package_copy_dir' );
 			if ( $args['clear_working'] ) {
 				$wp_filesystem->delete( $remote_source, true );
 			}
