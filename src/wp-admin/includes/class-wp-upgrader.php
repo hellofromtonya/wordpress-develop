@@ -593,10 +593,29 @@ class WP_Upgrader {
 			}
 		}
 
+		// Get data for send_error_data().
+		$start_time = time();
+		$slug       = '';
+		$type       = '';
+		if ( isset( $args['hook_extra']['plugin'] ) ) {
+			$slug = dirname( $args['hook_extra']['plugin'] );
+			$type = 'plugin_upgrade';
+		} elseif ( isset( $args['hook_extra']['theme'] ) ) {
+			$slug = $args['hook_extra']['theme'];
+			$type = 'theme_upgrade';
+		}
+
 		// Copy new version of item into place.
 		$result = copy_dir( $source, $remote_destination );
 		if ( is_wp_error( $result ) ) {
-			$this->send_error_data( $result, $start_time, 'install_package_copy_dir' );
+			$this->send_error_data(
+				$result,
+				array(
+					'type'       => $type . '_copy_dir',
+					'slug'       => $slug,
+					'time_taken' => time() - $start_time,
+				)
+			);
 			if ( $args['clear_working'] ) {
 				$wp_filesystem->delete( $remote_source, true );
 			}
