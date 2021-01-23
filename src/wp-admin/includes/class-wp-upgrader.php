@@ -452,8 +452,6 @@ class WP_Upgrader {
 	public function install_package( $args = array() ) {
 		global $wp_filesystem, $wp_theme_directories;
 
-		$start_time = time();
-
 		$defaults = array(
 			'source'                      => '', // Please always pass this.
 			'destination'                 => '', // ...and this.
