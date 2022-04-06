@@ -100,7 +100,6 @@ class Tests_REST_WpRestBlockPatternsController extends WP_Test_REST_Controller_T
 	public function test_register_routes() {
 		$routes = rest_get_server()->get_routes();
 		$this->assertArrayHasKey( static::REQUEST_ROUTE, $routes );
-
 	}
 
 	public function test_get_items() {
