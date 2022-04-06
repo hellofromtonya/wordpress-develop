@@ -132,8 +132,8 @@ function _load_remote_featured_patterns() {
  * Registers patterns from Pattern Directory provided by a theme's
  * `theme.json` file.
  *
- * @since 6.0.0
  * @access private
+ * @since 6.0.0
  */
 function _register_remote_theme_patterns() {
 	if ( ! get_theme_support( 'core-block-patterns' ) ) {
@@ -196,8 +196,8 @@ function _register_remote_theme_patterns() {
  *   - Block Types      (comma-separated values)
  *   - Inserter         (yes/no)
  *
- * @since 6.0.0
  * @access private
+ * @since 6.0.0
  */
 function _register_theme_block_patterns() {
 	$default_headers = array(
