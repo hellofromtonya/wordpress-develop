@@ -11,8 +11,8 @@ add_theme_support( 'core-block-patterns' );
 /**
  * Registers the core block patterns and categories.
  *
+ * @access private
  * @since 5.5.0
- * @private
  */
 function _register_core_block_patterns_and_categories() {
 	$should_register_core_patterns = get_theme_support( 'core-block-patterns' );
