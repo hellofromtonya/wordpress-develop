@@ -788,8 +788,8 @@ function excerpt_remove_blocks( $content ) {
  * Render inner blocks from the allowed wrapper blocks
  * for generating an excerpt.
  *
- * @access private
  * @since 5.8.0
+ * @access private
  *
  * @param array $parsed_block   The parsed block.
  * @param array $allowed_blocks The list of allowed inner blocks.

@@ -197,7 +197,7 @@ function _register_remote_theme_patterns() {
  *   - Inserter         (yes/no)
  *
  * @since 6.0.0
- * @access private 
+ * @access private
  */
 function _register_theme_block_patterns() {
 	$default_headers = array(
