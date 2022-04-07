@@ -11,8 +11,8 @@ add_theme_support( 'core-block-patterns' );
 /**
  * Registers the core block patterns and categories.
  *
- * @access private
  * @since 5.5.0
+ * @access private
  */
 function _register_core_block_patterns_and_categories() {
 	$should_register_core_patterns = get_theme_support( 'core-block-patterns' );
@@ -132,8 +132,8 @@ function _load_remote_featured_patterns() {
  * Registers patterns from Pattern Directory provided by a theme's
  * `theme.json` file.
  *
- * @access private
  * @since 6.0.0
+ * @access private
  */
 function _register_remote_theme_patterns() {
 	if ( ! get_theme_support( 'core-block-patterns' ) ) {
@@ -196,8 +196,8 @@ function _register_remote_theme_patterns() {
  *   - Block Types      (comma-separated values)
  *   - Inserter         (yes/no)
  *
- * @access private
  * @since 6.0.0
+ * @access private 
  */
 function _register_theme_block_patterns() {
 	$default_headers = array(
